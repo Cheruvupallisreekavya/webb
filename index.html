@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+.container {
+  text-align: center;
+}
+
+.login-form {
+  width: 333px;
+  padding: 43px;
+  border: 2px solid rgb(70, 15, 233);
+  border-radius: 5px;
+  background-color: rgba(70, 12, 188, 0.1);
+  margin: 20px 500px;
+}
+
+.login-form h2 {
+  margin-top: 0;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.login-form button {
+  width: 200px;
+  padding: 10px;
+  background-color: rgb(18, 213, 216);
+  color: rgba(11, 11, 11, 0.927);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: black;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="login-form" action="login.html" onsubmit="return validateform()" name="form">
+      <h2>Login</h2>
+      <input type="text" placeholder="Full Name" name="name">
+      <input type="email" placeholder="Email" name="email" required>
+      <input type="tel" placeholder="Phone Number" name="phone">
+      <input type="password" placeholder="Password" name="pass">
+      <input type="password" placeholder="Confirm Password" name="confirm">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+
+  <script>
+
+function validateform(){ 
+    var name=document.form.name.value;
+    var user=document.form.user.value;
+    var email=document.form.email.value;
+    var phone=document.form.phone.value;
+    var pass=document.form.pass.value;
+    var confirm=document.form.confirm.value;
+
+
+
+    if(name==null||name==""){
+        alert("Name can't be blank");
+        return false;
+    }
+    if(phone.length==11){
+        alert("Phone Number should contain 10 numbers");
+        return false;
+    }
+    if(user==null||user.length<6){
+        alert("Username atleast should contain 6 characters")
+    }
+    if(pass.length<5){
+        alert("Password should contain atleast 5 characters");
+        return false;
+    }
+    if(pass==confirm){
+        return true;
+    }
+    else{
+        alert("Password must be same");
+        return false;
+    }
+    
+    
+}
+  </script>
+</body>
+</html>
+
